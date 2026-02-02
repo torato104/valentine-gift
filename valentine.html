@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Valentine ❤️</title>
+    <style>
+        /* CSS: Isse website sundar dikhegi */
+        body {
+            background-color: #ffdae0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2rem;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #6c757d;
+            color: white;
+            position: absolute; /* Ye zaroori hai bhagane ke liye */
+        }
+
+        .cat-img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZ3YjR3eHJ3eHJ3eHJ3eHJ3eHJ3eHJ3eHJ3eHJ3eHJ3eHJ3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/57Y6B6Hn2m3E5C3m0m/giphy.gif" alt="Cute Cat" class="cat-img">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="celebrate()">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript: No button ko bhagane ka logic
+        const noBtn = document.getElementById('noBtn');
+
+        noBtn.addEventListener('mouseover', () => {
+            // Screen ka size nikalna
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            // Random position generate karna
+            const randomX = Math.floor(Math.random() * (windowWidth - noBtn.offsetWidth));
+            const randomY = Math.floor(Math.random() * (windowHeight - noBtn.offsetHeight));
+
+            // Button ko nayi jagah bhej dena
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+
+        // Yes button click hone par kya hoga
+        function celebrate() {
+            document.querySelector('.container').innerHTML = `
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnhybmN4cm5jeHJuY3hybmN4cm5jeHJuY3hybmN4cm5jeHJuY3hybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iCvpdvYitfXvG7TIsi/giphy.gif" class="cat-img">
+                <h1 style="color: #ff4d6d;">I knew it! Love you! ❤️</h1>
+            `;
+            // Background color change
+            document.body.style.backgroundColor = "#ff4d6d";
+            document.body.style.color = "white";
+        }
+    </script>
+<footer>Prepared by Mr. Unknown TA, Mumbai</footer>
+</body>
+</html>
